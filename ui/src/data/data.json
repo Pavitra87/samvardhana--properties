@@ -1,0 +1,302 @@
+{
+  "projects": {
+    "imgUrl": "/images/project-banner.png",
+    "altText": "Our Projects",
+    "explore": [
+      {
+        "imgUrl": "/images/project1.png",
+        "title": "Nisarga Hi-Tech Layout, Hoskote",
+        "description": "Situated in the rapidly growing satellite town of Hoskote, just 20 km from Bangalore’s Central Business District (CBD) and 18 km from the International Airport, Nisarga Hi-Tech Layout offers the perfect combination of urban proximity and eco-friendly living.",
+        "buttonText": "Explore More"
+      },
+      {
+        "imgUrl": "/images/project2.png",
+        "title": "Nisarga Vision City, Malur",
+        "description": "Located in Malur, just 20 minutes from IT hubs like Hosur City and ITPL, Nisarga Vision City is a 25-acre gated community designed for luxurious living in a serene environment. With close proximity to Malur Railway Station and Narasapura SEZ, this project offers both leisure and convenience.",
+        "buttonText": "Explore More"
+      },
+      {
+        "imgUrl": "/images/project3.png",
+        "title": "Nisarga Tejas Orchid, Bangalore East (Chikkathirupathi)",
+        "description": "Strategically located on STRR Road in Chikkathirupathi, Bangalore East, Nisarga Tejas Orchid is a 35-acre residential layout approved by both BMRDA and RERA. Positioned near key educational institutions and Bangalore’s IT corridors, this project ",
+        "buttonText": "Explore More"
+      },
+      {
+        "imgUrl": "/images/project4.png",
+        "title": "Nisarga Hi-Tech Layout, Hoskote",
+        "description": "Situated in the rapidly growing satellite town of Hoskote, just 20 km from Bangalore’s Central Business District (CBD) and 18 km from the International Airport, Nisarga Hi-Tech Layout offers the perfect combination of urban proximity and eco-friendly living.",
+        "buttonText": "Explore More"
+      },
+      {
+        "imgUrl": "/images/project5.png",
+        "title": "Nisarga Vision City, Malur",
+        "description": "Located in Malur, just 20 minutes from IT hubs like Hosur City and ITPL, Nisarga Vision City is a 25-acre gated community designed for luxurious living in a serene environment. With close proximity to Malur Railway Station and Narasapura SEZ, this project offers both leisure and convenience.",
+        "buttonText": "Explore More"
+      },
+      {
+        "imgUrl": "/images/project6.png",
+        "title": "Nisarga Tejas Orchid, Bangalore East (Chikkathirupathi)",
+        "description": "Strategically located on STRR Road in Chikkathirupathi, Bangalore East, Nisarga Tejas Orchid is a 35-acre residential layout approved by both BMRDA and RERA. is perfect for families and investors",
+        "buttonText": "Explore More"
+      }
+    ]
+  },
+  "about": {
+    "imgUrl": "/images/about-banner.png",
+    "altText": "About Us"
+  },
+  "contact": {
+    "imgUrl": "/images/contact-banner.png",
+    "altText": "Contact Us",
+    "textColor": "black"
+  },
+  "blog": {
+    "imgUrl": "/images/blog-banner.png",
+    "altText": "Blogs"
+  },
+  "aboutDetails": {
+    "offer": [
+      {
+        "img": "/images/offerIcon1.png",
+        "heading": "Residential development",
+        "des": "Explore our residential plots in prime locations like Hoskote, Malur, and Chikkathirupathi, designed to offer peaceful, eco-friendly living with all the modern amenities."
+      },
+      {
+        "img": "/images/offerIcon3.png",
+        "heading": "Commercial Spaces",
+        "des": "We also provide well-located commercial plots that are ideal for business growth, offering opportunities for investment and development in high-potential areas."
+      },
+      {
+        "img": "/images/offerIcon2.png",
+        "heading": "Sustainable Living",
+        "des": "Our focus on sustainable development ensures that our properties are not only beautiful but also environmentally responsible, providing residents with a healthier, greener lifestyle."
+      }
+    ],
+    "cardsdetail": [
+      {
+        "title": "Our Vision",
+        "image": "/images/journey1.png",
+        "text": "At Samvardhana Properties, our vision is to be a leader in real estate development, known for our integrity, innovation, and excellence. We aim to create living and working spaces  that not only meet the needs of today’s urban dwellers but also contribute to the well-being of future generations. Our commitment to sustainable development is at the heart of every project we undertake.`,"
+      },
+      {
+        "title": "Our Mission",
+        "image": "/images/journey2.png",
+        "text": "Our mission is simple yet profound: to provide better and smarter spaces. We believe that a home or business location is more than just a physical structure—it’s a place where lives are lived, memories are made, and dreams are realized. That’s why we focus on offering thoughtfully designed spaces that blend comfort, functionality, and aesthetics."
+      }
+    ]
+  },
+  "projectDetails": {
+    "images": [
+      { "img": "/images/projectdetail1.png" },
+      { "img": "/images/projectdetail2.png" },
+      { "img": "/images/projectdetail3.png" },
+      { "img": "/images/projectdetail1.png" },
+      { "img": "/images/projectdetail3.png" }
+    ],
+    "layout": [
+      { "img": "/images/img-1.png", "text": "1200 to 2400 sq.ft." },
+      { "img": "/images/img-2.png", "text": "BMRDA-approved" },
+      { "img": "/images/img-3.png", "text": "Located in Hoskote" },
+      { "img": "/images/img-4.png", "text": "World class amenities " },
+
+      { "img": "/images/img-3.png", "text": "Accessible within 15 km" },
+      {
+        "img": "/images/img-5.png",
+        "text": "Educational institutions  within a 15 km"
+      }
+    ],
+    "keyammenties": [
+      { "keyimg": "/images/key1.png", "text": "Swimming pool" },
+      { "keyimg": "/images/key2.png", "text": "Jogging Track" },
+      { "keyimg": "/images/key3.png", "text": "Garden" },
+      { "keyimg": "/images/key4.png", "text": "Gym" },
+      { "keyimg": "/images/key5.png", "text": "Park" },
+      { "keyimg": "/images/key6.png", "text": "Yoga" },
+      { "keyimg": "/images/key7.png", "text": "Sports" },
+      { "keyimg": "/images/key8.png", "text": "Parking" },
+      { "keyimg": "/images/key9.png", "text": "Wifi" },
+      { "keyimg": "/images/key2.png", "text": "Jogging Track" },
+      { "keyimg": "/images/key1.png", "text": "Swimming pool" },
+      { "keyimg": "/images/key2.png", "text": "Jogging Track" },
+      { "keyimg": "/images/key2.png", "text": "Jogging Track" }
+    ],
+    "locationhighlights": [
+      {
+        "img": "/images/lh-1.png",
+        "heading": "Educational Institutions",
+        "points": [
+          "The Ashok Leyland School - 5 Mins",
+          "Mithralaya International School - 7 Mins",
+          "Advaith International Academy - 7 Mins",
+          "NTR International School - 10 Mins",
+          "The Titan School - 10 Mins"
+        ]
+      },
+      {
+        "img": "/images/lh-2.png",
+        "heading": "Offices",
+        "points": [
+          "Hosur IT Park 10 Mins",
+          "Infosys Headquarter (Sarjapur) 25 Mins",
+          "Wipro HQ (Electronic City) 25 Mins",
+          "RGA Tech Park 30 Mins",
+          "ITPL Tech Park 40 Mins"
+        ]
+      },
+      {
+        "img": "/images/lh-3.png",
+        "heading": "Shopping Destinations",
+        "points": [
+          "Big Bazaar 5 Mins",
+          "Metro 20 Mins",
+          "The Forum Neighbourhood Mall 40 Mins",
+          "Central 45 Mins",
+          "Royal Meenakshi Mall 45 Mins"
+        ]
+      },
+      {
+        "img": "/images/lh-4.png",
+        "heading": "Hospitals",
+        "points": [
+          "ESI Hospital 10 Mins",
+          "BMS Multi Speciality Hospital 10 Mins",
+          "Narayana Hrudayalaya 20 Mins",
+          "Stanford speciality Hospital 35 Mins",
+          "Jayadeva Hospital 40 Mins"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "id": "1",
+      "question": "How do you ensure quality during construction?",
+      "answer": "We follow strict quality control procedures, conduct regular inspections, and work with trusted contractors to ensure the highest standards."
+    },
+    {
+      "id": "2",
+      "question": "How do you handle unexpected challenges during construction?",
+      "answer": "We follow strict quality control procedures, conduct regular inspections, and work with trusted contractors to ensure the highest standards.."
+    },
+    {
+      "id": "3",
+      "question": "Who will supervise the construction?",
+      "answer": "We follow strict quality control procedures, conduct regular inspections, and work with trusted contractors to ensure the highest standards."
+    },
+    {
+      "id": "4",
+      "question": "How do I get started with the building process?",
+      "answer": "We follow strict quality control procedures, conduct regular inspections, and work with trusted contractors to ensure the highest standards."
+    },
+    {
+      "id": "5",
+      "question": "Do you provide maintenance services after construction?",
+      "answer": "We follow strict quality control procedures, conduct regular inspections, and work with trusted contractors to ensure the highest standards."
+    }
+  ],
+  "services": [
+    {
+      "img": "/images/service1.png",
+      "heading": "Resendial Development",
+      "description": "Our core focus is on creating residential plots in prime locations that offer a balance between urban accessibility and tranquil living. Each residential project is thoughtfully planned, combining modern infrastructure with eco-friendly features to create communities that foster a fulfilling lifestyle.",
+      "btn": "Explore More"
+    },
+    {
+      "img": "/images/service2.png",
+      "heading": "Commercial Development",
+      "description": "We provide commercial plots designed to help businesses thrive in high-potential areas. Our commercial developments offer the perfect location for offices, retail outlets, or any enterprise looking to capitalize on the growth of Bangalore and its surroundings.",
+      "btn": "Explore More"
+    },
+    {
+      "img": "/images/service3.png",
+      "heading": "Property Management",
+      "description": "Our property management services are designed to offer seamless experiences for homeowners and investors. From maintaining common areas to ensuring security, we take care of the day-to-day management of your property so that you can enjoy peace of mind.",
+      "btn": "Explore More"
+    },
+    {
+      "img": "/images/service1.png",
+      "heading": "Low energy costs",
+      "description": "One of the most significant benefits of owning an Eco Haven Realty Home is lower energy costs. Our eco-friendly homes are designed to use less energy with our solar powered system, saving money on bills.",
+      "btn": "Explore More"
+    }
+  ],
+  "customer": [
+    {
+      "img": "/images/customer.png",
+      "heading": "Felix Jimoh",
+      "description": "“I had a wonderful experience working with Samvardhana properties to find my new home. They really took the time to understand what was important to me and helped me find a home that was not only beautiful but also eco-friendly and energy-efficient. "
+    },
+    {
+      "img": "/images/customer1.png",
+      "heading": "David",
+      "description": "“Samvardhana properties is an amazing real estate agency that truly understands the importance of sustainability and eco-friendliness. They helped me find a beautiful home that was not only environmentally conscious.”"
+    },
+    {
+      "img": "/images/customer2.png",
+      "heading": "Susan Lanre",
+      "description": "“I recently sold my home with Samvardhana properties, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me.”"
+    },
+    {
+      "img": "/images/customer1.png",
+      "heading": "Susan Lanre",
+      "description": "“I recently sold my home with Samvardhana properties, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me.”"
+    }
+  ],
+  "blogdetails": [
+    {
+      "leftimg": "/images/blog1.png",
+      "heading": "How Digital Home Loans Make Buying \n a House Easy",
+      "description": "Introduction Owning a home is a lifelong dream for many, symbolising stability, comfort, and success. Over the years, the process Read More",
+      "persomimg": "/images/person.png",
+      "personname": "By Derrick Henry",
+      "time": "September 12, 2024 at 6:14 AM",
+      "like": "300",
+      "dislike": "46",
+      "message": "233"
+    },
+    {
+      "leftimg": "/images/blog2.png",
+      "heading": "How Digital Home Loans Make Buying a House Easy",
+      "description": "Introduction Owning a home is a lifelong dream for many, symbolising stability, comfort, and success. Over the years, the process Read More",
+      "persomimg": "/images/person.png",
+      "personname": "By Derrick Henry",
+      "time": "September 12, 2024 at 6:14 AM",
+      "like": "300",
+      "dislike": "46",
+      "message": "233"
+    },
+    {
+      "leftimg": "/images/blog3.png",
+      "heading": "How Digital Home Loans Make Buying a House Easy",
+      "description": "Introduction Owning a home is a lifelong dream for many, symbolising stability, comfort, and success. Over the years, the process Read More",
+      "persomimg": "/images/person.png",
+      "personname": "By Derrick Henry",
+      "time": "September 12, 2024 at 6:14 AM",
+      "like": "300",
+      "dislike": "46",
+      "message": "233"
+    },
+    {
+      "leftimg": "/images/blog4.png",
+      "heading": "How Digital Home Loans Make Buying a House Easy",
+      "description": "Introduction Owning a home is a lifelong dream for many, symbolising stability, comfort, and success. Over the years, the process Read More",
+      "persomimg": "/images/person.png",
+      "personname": "By Derrick Henry",
+      "time": "September 12, 2024 at 6:14 AM",
+      "like": "300",
+      "dislike": "46",
+      "message": "233"
+    },
+    {
+      "leftimg": "/images/blog5.png",
+      "heading": "How Digital Home Loans Make Buying a House Easy",
+      "description": "Introduction Owning a home is a lifelong dream for many, symbolising stability, comfort, and success. Over the years, the process Read More",
+      "persomimg": "/images/person.png",
+      "personname": "By Derrick Henry",
+      "time": "September 12, 2024 at 6:14 AM",
+      "like": "300",
+      "dislike": "46",
+      "message": "233"
+    }
+  ]
+}
