@@ -15,7 +15,7 @@ const About = () => {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const response = await axios.get("https://samvardhanaproperties-api.vercel.app/api/about");
+        const response = await axios.get("https://samvardhana-properties.onrender.com/api/about");
         setApiAboutData(response.data[0]); // Adjust according to your API structure
       } catch (err) {
         setError("Failed to fetch About data.");
@@ -38,7 +38,7 @@ const About = () => {
             <img
               src={
                 apiAboutData.imgUrl?.length > 0
-                  ? `https://samvardhanaproperties-api.vercel.app/uploads/${apiAboutData.imgUrl[0]}`
+                  ? `https://samvardhana-properties.onrender.com/uploads/${apiAboutData.imgUrl[0]}`
                   : "https://via.placeholder.com/400x300?text=No+Image"
               }
               alt="About Us"

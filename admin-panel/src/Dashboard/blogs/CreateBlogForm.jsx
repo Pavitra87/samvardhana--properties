@@ -44,7 +44,7 @@ const CreateBlogForm = () => {
     if (profilepic) data.append("profilepic", profilepic);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/blog/", data, {
+      const response = await axios.post("https://samvardhana-properties.onrender.com/api/blog/", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

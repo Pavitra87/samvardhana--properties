@@ -18,7 +18,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/blog/${id}`);
+        const res = await axios.get(`https://samvardhana-properties.onrender.com/api/blog/${id}`);
         const blog = res.data.data || res.data;
         setHeading(blog.heading || "");
         setName(blog.name || "");
@@ -40,7 +40,7 @@ const EditBlog = () => {
     setError("");
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/blog/${id}`, {
+      const res = await axios.put(`https://samvardhana-properties.onrender.com/api/blog/${id}`, {
         heading,
         name,
         description,

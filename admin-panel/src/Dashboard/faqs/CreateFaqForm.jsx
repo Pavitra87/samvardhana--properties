@@ -15,7 +15,7 @@ const CreateFaqForm = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/faqs/", { question, answer });
+      const response = await axios.post("https://samvardhana-properties.onrender.com/api/faqs/", { question, answer });
       if (response.data.success) {
         navigate("/faqdashboard");
       } else {

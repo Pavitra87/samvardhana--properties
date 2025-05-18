@@ -15,7 +15,7 @@ const BlogDashboard = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/blog/");
+      const res = await axios.get("https://samvardhana-properties.onrender.com/api/blog/");
       setBlogs(res.data || []);
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -32,7 +32,7 @@ const BlogDashboard = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/blog/${id}`);
+      await axios.delete(`https://samvardhana-properties.onrender.com/api/blog/${id}`);
       setBlogs(blogs.filter((blog) => blog._id !== id));
     } catch (error) {
       console.error("Error deleting blog:", error);

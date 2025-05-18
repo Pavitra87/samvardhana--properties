@@ -17,7 +17,7 @@ const EditFaq = () => {
     const fetchFaq = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/faqs/${id}`
+          `https://samvardhana-properties.onrender.com/api/faqs/${id}`
         );
         const faq = response.data.data || response.data; // adjust based on API
         setQuestion(faq.question || "");
@@ -38,7 +38,7 @@ const EditFaq = () => {
 
     try {
       // Update FAQ via PUT or PATCH request
-      const response = await axios.put(`http://localhost:5000/api/faqs/${id}`, {
+      const response = await axios.put(`https://samvardhana-properties.onrender.com/api/faqs/${id}`, {
         question,
         answer,
       });

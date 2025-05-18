@@ -10,7 +10,7 @@ const FaqDashboard = () => {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/faqs/");
+        const response = await axios.get("https://samvardhana-properties.onrender.com/api/faqs/");
       setFaqs(response.data || []);
       } catch (err) {
         setError(err.response?.data?.message || "Failed to fetch FAQs");
@@ -25,7 +25,7 @@ const FaqDashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this FAQ?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/faqs/${id}`);
+      await axios.delete(`https://samvardhana-properties.onrender.com/api/faqs/${id}`);
       setFaqs(faqs.filter((faq) => faq._id !== id));
     } catch (err) {
       alert("Failed to delete FAQ");

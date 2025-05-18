@@ -10,7 +10,7 @@ const Question = ({ hideSubText = false }) => {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get("https://samvardhanaproperties-api.vercel.app/api/faqs");
+        const response = await axios.get("https://samvardhana-properties.onrender.com/api/faqs");
         setFaqList(response.data); // Store all FAQ items
       } catch (err) {
         console.error("Error fetching FAQs:", err);
