@@ -19,13 +19,15 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`https://samvardhana-properties.onrender.com/api/blog/${id}`);
+        const res = await axios.get(
+          `https://samvardhana-properties.onrender.com/api/blog/${id}`
+        );
         const blog = res.data.data || res.data;
         setHeading(blog.heading || "");
         setName(blog.name || "");
         setDescription(blog.description || "");
         setMessage(blog.message || "");
-        setImgUrl(blog.imgUrl || "")
+        setImgUrl(blog.imgUrl || "");
       } catch (err) {
         setError("Error fetching blog: " + err.message);
       } finally {
@@ -42,19 +44,20 @@ const EditBlog = () => {
     setError("");
 
     try {
-      const res = await axios.put(`https://samvardhana-properties.onrender.com/api/blog/${id}`, {
-        heading,
-        name,
-        description,
-        message,
-        imgUrl
-      });
+      const res = await axios.put(
+        `https://samvardhana-properties.onrender.com/api/blog/${id}`,
+        {
+          heading,
+          name,
+          description,
+          message,
+          imgUrl,
+        }
+      );
       console.log(res.data);
-      console.log("backend",res.data.data)
-     
-        navigate('/blogdashboard');
-     
-    
+      console.log("backend", res.data.data);
+
+      navigate("/blogdashboard");
     } catch (err) {
       setError("Update failed: " + err.message);
     } finally {
@@ -139,7 +142,7 @@ const EditBlog = () => {
             className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-         <div>
+        <div>
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-700 mb-1"
@@ -147,8 +150,9 @@ const EditBlog = () => {
             Image
           </label>
           <input
-            id="name"
-            type="text"
+            id="imgUrl"
+            accept="image/*"
+            type="file"
             value={imgUrl}
             onChange={(e) => setImgUrl(e.target.value)}
             required
