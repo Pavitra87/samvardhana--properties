@@ -56,9 +56,7 @@ app.use('/api/faqs',require('./routes/faqRoutes/faqRoutes'))
 //serviceroutes
 // app.use('/api/service',require('./routes/serviceRoutes/serviceRoutes'))
 
-app.get('/adminpanel/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'adminpanel/build', 'index.html'));
-});
+
 
 
 app.listen(port,()=>{
