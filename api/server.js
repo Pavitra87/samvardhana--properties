@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors=require('cors')
 const app=express()
 const port=process.env.PORT || 5000;
+const path=require('path')
 
 connectDB()
 
@@ -20,6 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 //uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // api.use('/api/home',require('./routes/homeRoutes'))
+
+app.use('/adminpanel', express.static(path.join(__dirname, 'adminpanel/build')));
+
 
 //projectroutes
 app.use('/api/project',require('./routes/projectRoutes/projectRoutes'))
@@ -53,7 +57,9 @@ app.use('/api/faqs',require('./routes/faqRoutes/faqRoutes'))
 //serviceroutes
 app.use('/api/service',require('./routes/serviceRoutes/serviceRoutes'))
 
-
+app.get('/adminpanel/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'adminpanel/build', 'index.html'));
+});
 
 
 app.listen(port,()=>{
