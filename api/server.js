@@ -23,13 +23,10 @@ app.get("/ui/*", (req, res) => {
 });
 
 // ===== Serve Admin Panel =====
-app.use(
-  "/admin-panel",
-  express.static(path.join(__dirname, "admin-panel", "build"))
-);
+app.use('/admin-panel', express.static(path.join(__dirname, 'admin-panel', 'build')));
 
-app.get("/admin-panel/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "admin-panel", "build", "index.html"));
+app.get('/admin-panel/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin-panel', 'build', 'index.html'));
 });
 
 //uploads
