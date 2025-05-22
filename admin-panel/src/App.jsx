@@ -14,12 +14,11 @@ import EditFaq from "./Dashboard/faqs/EditFaq";
 
 const App = () => {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/admin-panel">
       <DashboardHeader />
       <Routes>
         <Route path="/" element={<AdminDashboard />}>
-          {/* <Route path="createabout" element={<CreateAboutPage />} /> */}
-          {/* <Route path="aboutdashboard" element={<AboutDashboard />} /> */}
+         
           <Route index element={<Navigate to="blogdashboard" replace />} />
           <Route path="blogdashboard" element={<BlogDashboard />} />
           <Route path="createblog" element={<CreateBlogForm />} />
