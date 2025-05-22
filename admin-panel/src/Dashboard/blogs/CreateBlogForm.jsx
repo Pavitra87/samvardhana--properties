@@ -8,8 +8,7 @@ const CreateBlogForm = () => {
     name: "",
     heading: "",
     description: "",
-    like: "",
-    dislike: "",
+   
     message: "",
   });
 
@@ -101,21 +100,7 @@ const CreateBlogForm = () => {
           className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        <input
-          type="text"
-          name="like"
-          placeholder="Like"
-          onChange={handleChange}
-          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-
-        <input
-          type="text"
-          name="dislike"
-          placeholder="Dislike"
-          onChange={handleChange}
-          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        
 
         <textarea
           name="message"

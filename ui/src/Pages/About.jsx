@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../Components/Banner";
-import aboutBannerData from "../data/data.json"; // Renamed import to avoid confusion
+import aboutBannerData from "../data/data.json"; 
 import AboutCompany from "../Components/about/AboutCompany";
 import Offer from "../Components/about/Offer";
 import WhyChooseUs from "../Components/about/WhyChooseUs";
@@ -16,7 +16,7 @@ const About = () => {
     const fetchAboutData = async () => {
       try {
         const response = await axios.get("https://samvardhana-properties.onrender.com/api/about");
-        setApiAboutData(response.data[0]); // Adjust according to your API structure
+        setApiAboutData(response.data[0]); 
       } catch (err) {
         setError("Failed to fetch About data.");
       }

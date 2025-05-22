@@ -11,6 +11,7 @@ const EditBlog = () => {
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -24,6 +25,7 @@ const EditBlog = () => {
         setName(blog.name || "");
         setDescription(blog.description || "");
         setMessage(blog.message || "");
+        setImgUrl(blog.imgUrl || "")
       } catch (err) {
         setError("Error fetching blog: " + err.message);
       } finally {
@@ -45,6 +47,7 @@ const EditBlog = () => {
         name,
         description,
         message,
+        imgUrl
       });
       console.log(res.data);
       console.log("backend",res.data.data)
@@ -133,6 +136,22 @@ const EditBlog = () => {
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+         <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Image
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={imgUrl}
+            onChange={(e) => setImgUrl(e.target.value)}
+            required
             className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>

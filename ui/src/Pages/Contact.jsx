@@ -30,7 +30,7 @@ const Contact = () => {
     setForm({ name: "", email: "", phone: "", city: "", message: "" });
   };
 
-  const { imgUrl, altText, textColor } = contactData.contact;
+  const { imgUrl, altText} = contactData.contact;
 
   return (
     <>

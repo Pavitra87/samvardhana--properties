@@ -19,8 +19,8 @@ const App = () => {
     <DashboardHeader/>
       <Routes>
         <Route path="/" element={<AdminDashboard />}>
-          <Route path="createabout" element={<CreateAboutPage />} />
-          <Route path="aboutdashboard" element={<AboutDashboard />} />
+          {/* <Route path="createabout" element={<CreateAboutPage />} /> */}
+          {/* <Route path="aboutdashboard" element={<AboutDashboard />} /> */}
           <Route path="blogdashboard" element={<BlogDashboard />} />
           <Route path="createblog" element={<CreateBlogForm />} />
           <Route path="editblog/:id" element={<EditBlog />} />
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="createfaq" element={<CreateFaqForm />} />
           <Route path="editfaq/:id" element={<EditFaq />} />
         </Route>
-        <Route path="*" element={<div>404 Not Found</div>} />
+        
       </Routes>
     </BrowserRouter>
   );
