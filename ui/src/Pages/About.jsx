@@ -12,17 +12,17 @@ const About = () => {
   const [apiAboutData, setApiAboutData] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchAboutData = async () => {
-      try {
-        const response = await axios.get("https://samvardhana-properties.onrender.com/api/about");
-        setApiAboutData(response.data[0]); 
-      } catch (err) {
-        setError("Failed to fetch About data.");
-      }
-    };
-    fetchAboutData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchAboutData = async () => {
+  //     try {
+  //       const response = await axios.get("https://samvardhana-properties.onrender.com/api/about");
+  //       setApiAboutData(response.data[0]); 
+  //     } catch (err) {
+  //       setError("Failed to fetch About data.");
+  //     }
+  //   };
+  //   fetchAboutData();
+  // }, []);
 
   if (error) return <p className="text-red-500 p-4">{error}</p>;
   if (!apiAboutData) return <p className="p-4">Loading...</p>;
