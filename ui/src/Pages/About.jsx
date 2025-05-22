@@ -31,9 +31,9 @@ const About = () => {
     <>
       <Banner imgUrl={imgUrl} altText={altText} />
 
-      <div className="max-w-7xl md:max-w-6xl mx-auto mt-14 px-4">
+      {/* <div className="max-w-7xl md:max-w-6xl mx-auto mt-14 px-4">
         <div className="flex flex-col md:flex-row gap-8 h-auto md:h-64">
-          {/* Left - Image */}
+        
           <div className="w-full md:w-1/2">
             <img
               src={
@@ -46,7 +46,7 @@ const About = () => {
             />
           </div>
 
-          {/* Right - Text */}
+        
           <div className="w-full md:w-1/2 flex flex-col gap-3 text-sm">
             <div className="mb-2 flex items-center gap-1">
               <span className="h-0.5 w-8 bg-green-800"></span>
@@ -63,7 +63,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto mt-14 px-4 ">
         <AboutCompany />
