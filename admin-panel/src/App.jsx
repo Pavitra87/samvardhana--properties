@@ -14,7 +14,7 @@ import EditFaq from "./Dashboard/faqs/EditFaq";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/adminpanel">
       <DashboardHeader />
       <Routes>
         <Route path="/" element={<AdminDashboard />}>
