@@ -2,7 +2,8 @@
   "name": "admin-panel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/admin-panel",
+  "homepage": "https://samvardhana-properties.onrender.com/admin-panel",
+
 
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
