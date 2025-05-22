@@ -8,7 +8,7 @@ router.post('/', upload.fields([
     { name: "profilepic", maxCount: 1 },
     { name: "imgUrl", maxCount: 1 },
   ]), blogctrl.create);
-router.get('/all', blogctrl.getAll);
+router.get('/', blogctrl.getAll);
 router.get('/:id', blogctrl.getById);
 router.put('/:id', blogctrl.update);
 router.delete('/:id', blogctrl.delete);
