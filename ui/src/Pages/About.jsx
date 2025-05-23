@@ -9,8 +9,8 @@ import axios from "axios";
 const About = () => {
   const { imgUrl, altText } = aboutBannerData.about;
 
-  const [apiAboutData, setApiAboutData] = useState(null);
-  const [error, setError] = useState(null);
+  // const [apiAboutData, setApiAboutData] = useState(null);
+  // const [error, setError] = useState(null);
 
   // useEffect(() => {
   //   const fetchAboutData = async () => {
@@ -24,8 +24,7 @@ const About = () => {
   //   fetchAboutData();
   // }, []);
 
-  if (error) return <p className="text-red-500 p-4">{error}</p>;
-  if (!apiAboutData) return <p className="p-4">Loading...</p>;
+
 
   return (
     <>
