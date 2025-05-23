@@ -4,7 +4,7 @@ const faqCtrl = require('../../controller/faqctrl/faqCtrl');
 const upload = require("../../middleware/uploadMiddleware");
 
 
-router.post('/',upload.single("imgUrl"), faqCtrl.create);
+router.post('/', faqCtrl.create);
 router.get('/', faqCtrl.getAll);
 router.get('/:id', faqCtrl.getById);
 router.put('/:id', faqCtrl.update);

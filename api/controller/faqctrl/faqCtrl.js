@@ -2,27 +2,35 @@ const Faqs = require("../../models/faq/faq");
 
 exports.create = async (req, res) => {
   try {
-    console.log("REQ.BODY:", req.body); // 🔍 Check this
+    console.log("REQ.BODY:", req.body); // See what's actually sent
 
     const { question, answer } = req.body;
+
+    if (!question || !answer) {
+      return res.status(400).json({
+        success: false,
+        message: "Both question and answer are required.",
+      });
+    }
 
     const faqs = new Faqs({ question, answer });
     const savedfaqs = await faqs.save();
 
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
-      message: "created successfully",
+      message: "FAQ created successfully.",
       data: savedfaqs,
     });
   } catch (error) {
-    console.error("Error creating :", error);
-    res.status(500).json({
+    console.error("Create FAQ Error:", error); // This goes to your Render logs
+    return res.status(500).json({
       success: false,
-      message: "Server error while creating ",
+      message: "Internal server error.",
       error: error.message,
     });
   }
 };
+
 
 
 // Get all
