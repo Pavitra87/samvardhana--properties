@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 const CreateFaqForm = () => {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    question: "",
+    answer: "",
+  });
+
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,22 +26,42 @@ const CreateFaqForm = () => {
     setError("");
 
     try {
-      const response = await axios.post("https://samvardhana-properties.onrender.com/api/faqs/", { question, answer });
+     const response = await axios.post(
+  "https://samvardhana-properties.onrender.com/api/faqs/",
+  formData,
+  {
+    headers: { "Content-Type": "application/json" },
+  }
+);
+
       if (response.data.success) {
+        alert("FAQ created successfully!");
         navigate("/faqdashboard");
       } else {
         setError("Failed to create FAQ");
       }
     } catch (err) {
-      setError(err.response?.data?.message || err.message);
+      setError(err.response?.data?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
+  const handleClose = () => {
+    navigate("/faqdashboard");
+  };
+
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Create FAQ</h2>
+    <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md relative">
+      <button
+        onClick={handleClose}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-900 text-2xl font-bold"
+        aria-label="Close"
+      >
+        <FaTimes />
+      </button>
+
+      <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Create FAQ</h2>
 
       {error && (
         <p className="mb-4 p-3 bg-red-100 text-red-700 border border-red-400 rounded">
@@ -45,9 +76,10 @@ const CreateFaqForm = () => {
           </label>
           <input
             id="question"
+            name="question"
             type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
+            value={formData.question}
+            onChange={handleChange}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
             placeholder="Enter the FAQ question"
@@ -60,8 +92,9 @@ const CreateFaqForm = () => {
           </label>
           <textarea
             id="answer"
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
+            name="answer"
+            value={formData.answer}
+            onChange={handleChange}
             required
             rows={5}
             className="w-full px-4 py-2 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"

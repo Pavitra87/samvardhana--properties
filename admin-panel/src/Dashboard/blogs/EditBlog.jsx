@@ -10,9 +10,10 @@ const EditBlog = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
-  const [imgUrl, setImgUrl] = useState(null);
+  const [imgUrl, setImgUrl] = useState(""); // existing image URL
+  const [imageFile, setImageFile] = useState(null); // new image file
 
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
@@ -44,19 +45,26 @@ const EditBlog = () => {
     setError("");
 
     try {
+      const formData = new FormData();
+      formData.append("heading", heading);
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("message", message);
+      if (imageFile) {
+        formData.append("imgUrl", imageFile);
+      }
+
       const res = await axios.put(
         `https://samvardhana-properties.onrender.com/api/blog/${id}`,
+        formData,
         {
-          heading,
-          name,
-          description,
-          message,
-          imgUrl,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
-      console.log(res.data);
-      console.log("backend", res.data.data);
 
+      console.log(res.data);
       navigate("/blogdashboard");
     } catch (err) {
       setError("Update failed: " + err.message);
@@ -77,10 +85,7 @@ const EditBlog = () => {
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label
-            htmlFor="heading"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor="heading" className="block text-sm font-medium text-gray-700 mb-1">
             Heading
           </label>
           <input
@@ -94,10 +99,7 @@ const EditBlog = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Name
           </label>
           <input
@@ -111,10 +113,7 @@ const EditBlog = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
             Description
           </label>
           <textarea
@@ -128,10 +127,7 @@ const EditBlog = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
             Message
           </label>
           <input
@@ -142,20 +138,26 @@ const EditBlog = () => {
             className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor="imgUrl" className="block text-sm font-medium text-gray-700 mb-1">
             Image
           </label>
+          {imgUrl && (
+            <div className="mb-2">
+              <p className="text-sm text-gray-600">Current Image:</p>
+              <img
+                src={imgUrl}
+                alt="Current"
+                className="w-32 h-32 object-cover border rounded"
+              />
+            </div>
+          )}
           <input
             id="imgUrl"
             accept="image/*"
             type="file"
-            value={imgUrl}
-            onChange={(e) => setImgUrl(e.target.value)}
-            required
+            onChange={(e) => setImageFile(e.target.files[0])}
             className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -164,9 +166,7 @@ const EditBlog = () => {
           type="submit"
           disabled={submitting}
           className={`w-full py-2 px-4 rounded text-white font-semibold transition ${
-            submitting
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
+            submitting ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
           }`}
         >
           {submitting ? "Updating..." : "Update Blog"}
