@@ -15,6 +15,18 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+//uploads
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// api.use('/api/home',require('./routes/homeRoutes'))
+
+//blogroutes
+app.use("/api/blog", require("./routes/blogRoutes/blogRoutes"));
+
+//feqroutes
+app.use("/api/faqs", require("./routes/faqRoutes/faqRoutes"));
+
 // ===== Serve UI =====
 app.use("/ui", express.static(path.join(__dirname, "ui", "build")));
 
@@ -28,16 +40,6 @@ app.use('/admin-panel', express.static(path.join(__dirname, 'admin-panel', 'buil
 app.get('/admin-panel/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'admin-panel', 'build', 'index.html'));
 });
-
-//uploads
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-// api.use('/api/home',require('./routes/homeRoutes'))
-
-//blogroutes
-app.use("/api/blog", require("./routes/blogRoutes/blogRoutes"));
-
-//feqroutes
-app.use("/api/faqs", require("./routes/faqRoutes/faqRoutes"));
 
 app.listen(port, () => {
   console.log(`Server is running ${port}`);
