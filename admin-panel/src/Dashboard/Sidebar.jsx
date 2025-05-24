@@ -16,22 +16,14 @@ const Sidebar = () => {
       <ul className="flex flex-col justify-center py-4 space-y-2">
         <li>
           <Link
-            to="/project"
+            to="/projectdashboard"
             className="flex items-center py-2  px-4   hover:bg-gray-700 transition"
           >
             <MdOutlineFormatListBulleted className="text-xl mr-3" />
             Projects
           </Link>
         </li>
-        {/* <li>
-          <Link
-            to="/banners"
-            className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
-          >
-            <BiImageAdd className="text-xl mr-3" />
-            Banners
-          </Link>
-        </li> */}
+        
         <li>
           <Link
             to="/blogdashboard"
