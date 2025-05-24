@@ -49,15 +49,15 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        {/* <li>
+        <li>
           <Link
-           
+          to='/aboutdashboard' 
             className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
           >
             <MdOutlineFormatListBulleted className="text-xl mr-3" />
             About Us
           </Link>
-        </li> */}
+        </li>
 
         <li>
           <Link className="flex items-center px-4 py-2 hover:bg-gray-700 transition">
