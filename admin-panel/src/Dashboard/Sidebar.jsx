@@ -14,34 +14,15 @@ const Sidebar = () => {
   return (
     <div className="hidden md:block w-64 min-h-screen bg-gray-800 text-white shadow-lg">
       <ul className="flex flex-col justify-center py-4 space-y-2">
-        {/* <li>
-          <Link
-            to="/"
-            className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
-          >
-            <MdDashboard className="text-xl mr-3" />
-            Dashboard
-          </Link>
-        </li> */}
-       
-        {/* <li>
-          <Link
-            to="/customer-speaks"
-            className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
-          >
-            <MdOutlineFormatListBulleted className="text-xl mr-3" />
-            Customer Speaks
-          </Link>
-        </li> */}
-         {/* <li>
+        <li>
           <Link
             to="/project"
             className="flex items-center py-2  px-4   hover:bg-gray-700 transition"
           >
-              <MdOutlineFormatListBulleted className="text-xl mr-3" />
-           Projects
+            <MdOutlineFormatListBulleted className="text-xl mr-3" />
+            Projects
           </Link>
-        </li> */}
+        </li>
         {/* <li>
           <Link
             to="/banners"
@@ -60,7 +41,7 @@ const Sidebar = () => {
             Blogs
           </Link>
         </li>
-           <li>
+        <li>
           <Link
             to="/faqdashboard"
             className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
@@ -70,15 +51,12 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link
-          
-            className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
-          >
+          <Link className="flex items-center py-2  px-4  hover:bg-gray-700 transition">
             <MdPermContactCalendar className="text-xl mr-3" />
             Contact Us
           </Link>
         </li>
-       
+
         {/* <li>
           <Link
            
@@ -88,13 +66,9 @@ const Sidebar = () => {
             About Us
           </Link>
         </li> */}
-        
-      
+
         <li>
-          <Link
-           
-            className="flex items-center px-4 py-2 hover:bg-gray-700 transition"
-          >
+          <Link className="flex items-center px-4 py-2 hover:bg-gray-700 transition">
             <MdPermContactCalendar className="text-xl mr-3" />
             Settings
           </Link>

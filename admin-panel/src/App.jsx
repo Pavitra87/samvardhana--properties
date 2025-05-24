@@ -11,14 +11,16 @@ import EditBlog from "./Dashboard/blogs/EditBlog";
 import FaqDashboard from "./Dashboard/faqs/FaqDashboard";
 import CreateFaqForm from "./Dashboard/faqs/CreateFaqForm";
 import EditFaq from "./Dashboard/faqs/EditFaq";
+import CreateProject from "./Dashboard/project/CreateProject";
+import ProjectDashboard from "./Dashboard/project/ProjectDashboard";
+import EditProject from "./Dashboard/project/EditProject";
 
 const App = () => {
   return (
-    <BrowserRouter  >
+    <BrowserRouter>
       <DashboardHeader />
       <Routes>
         <Route path="/" element={<AdminDashboard />}>
-         
           <Route index element={<Navigate to="blogdashboard" replace />} />
           <Route path="blogdashboard" element={<BlogDashboard />} />
           <Route path="createblog" element={<CreateBlogForm />} />
@@ -27,6 +29,10 @@ const App = () => {
           <Route path="createfaq" element={<CreateFaqForm />} />
           <Route path="editfaq/:id" element={<EditFaq />} />
 
+          {/* ---------------project---------------- */}
+          <Route path="createproject" element={<CreateProject />} />
+          <Route path="projectdashboard" element={<ProjectDashboard />} />
+          <Route path="editproject/:id" element={<EditProject />} />
           <Route path="*" element={<Navigate to="blogdashboard" replace />} />
         </Route>
       </Routes>
