@@ -4,87 +4,90 @@ import axios from "axios";
 
 const EditProject = () => {
   const { id } = useParams();
-    const navigate = useNavigate();
-  
-    const [heading, setHeading] = useState("");
-   
-    const [description, setDescription] = useState("");
-  
-    const [imgUrl, setImgUrl] = useState(""); // existing image URL
-    const [imageFile, setImageFile] = useState(null); // new image file
-  
-    const [error, setError] = useState("");
-    const [loading, setLoading] = useState(true);
-    const [submitting, setSubmitting] = useState(false);
-  
-    useEffect(() => {
-      const fetchProject = async () => {
-        try {
-          const res = await axios.get(
-            `https://samvardhana-properties.onrender.com/api/project/${id}`
-          );
-          const project = res.data.data || res.data;
-          setHeading(blog.heading || "");
-         
-          setDescription(blog.description || "");
-          
-          setImgUrl(blog.imgUrl || "");
-        } catch (err) {
-          setError("Error fetching blog: " + err.message);
-        } finally {
-          setLoading(false);
-        }
-      };
-  
-      fetchProject();
-    }, [id]);
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setSubmitting(true);
-      setError("");
-  
+  const navigate = useNavigate();
+
+  const [heading, setHeading] = useState("");
+
+  const [description, setDescription] = useState("");
+
+  const [imgUrl, setImgUrl] = useState(""); // existing image URL
+  const [imageFile, setImageFile] = useState(null); // new image file
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const fetchProject = async () => {
       try {
-        const formData = new FormData();
-        formData.append("heading", heading);
-       
-        formData.append("description", description);
-       
-        if (imageFile) {
-          formData.append("imgUrl", imageFile);
-        }
-  
-        const res = await axios.put(
-          `https://samvardhana-properties.onrender.com/api/project/${id}`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
+        const res = await axios.get(
+          `https://samvardhana-properties.onrender.com/api/project/${id}`
         );
-  
-        console.log(res.data);
-        navigate("/projectdashboard");
+        const project = res.data.data || res.data;
+        setHeading(project.heading || "");
+
+        setDescription(project.description || "");
+
+        setImgUrl(project.imgUrl || "");
       } catch (err) {
-        setError("Update failed: " + err.message);
+        setError("Error fetching blog: " + err.message);
       } finally {
-        setSubmitting(false);
+        setLoading(false);
       }
     };
-  
-    if (loading)
-    return <p className="text-center text-gray-600">Loading  data...</p>;
+
+    fetchProject();
+  }, [id]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("heading", heading);
+
+      formData.append("description", description);
+
+      if (imageFile) {
+        formData.append("imgUrl", imageFile);
+      }
+
+      const res = await axios.put(
+        `https://samvardhana-properties.onrender.com/api/project/${id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log(res.data);
+      navigate("/projectdashboard");
+    } catch (err) {
+      setError("Update failed: " + err.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (loading)
+    return <p className="text-center text-gray-600">Loading data...</p>;
   if (error) return <p className="text-center text-red-600">{error}</p>;
   return (
-     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow rounded-lg">
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow rounded-lg">
       <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
         Edit Project
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label htmlFor="heading" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="heading"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Heading
           </label>
           <input
@@ -97,10 +100,11 @@ const EditProject = () => {
           />
         </div>
 
-       
-
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="description"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Description
           </label>
           <textarea
@@ -113,10 +117,11 @@ const EditProject = () => {
           ></textarea>
         </div>
 
-       
-
         <div>
-          <label htmlFor="imgUrl" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="imgUrl"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Image
           </label>
           {imgUrl && (
@@ -142,14 +147,16 @@ const EditProject = () => {
           type="submit"
           disabled={submitting}
           className={`w-full py-2 px-4 rounded text-white font-semibold transition ${
-            submitting ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+            submitting
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
           }`}
         >
           {submitting ? "Updating..." : "Update Project"}
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default EditProject
+export default EditProject;
