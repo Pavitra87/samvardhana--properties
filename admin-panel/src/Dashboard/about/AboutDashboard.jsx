@@ -53,7 +53,7 @@ const AboutDashboard = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">About Dashboard</h2>
 
-        <Link to="/createproject">
+        <Link to="/createabout">
           <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
             + Create About
           </button>
@@ -63,7 +63,7 @@ const AboutDashboard = () => {
       <div className="bg-white p-4 rounded shadow">
         {loading ? (
           <p className="text-center">Loading ...</p>
-        ) : projects.length === 0 ? (
+        ) : abouts.length === 0 ? (
           <p className="text-center text-gray-600">No found.</p>
         ) : (
           <table className="w-full border border-gray-300 text-sm">
@@ -82,7 +82,7 @@ const AboutDashboard = () => {
                   <td className="p-2 border">{about.heading}</td>
                   <td className="p-2 border">{about.description}</td>
                   <td className="p-2 border text-center space-x-2">
-                    <Link to={`/editproject/${about._id}`}>
+                    <Link to={`/editabout/${about._id}`}>
                       <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded">
                         Edit
                       </button>
