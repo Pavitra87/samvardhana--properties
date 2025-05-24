@@ -14,7 +14,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get("https://samvardhana-properties.onrender.com/api/blog");
+        const response = await axios.get(
+          "https://samvardhana-properties.onrender.com/api/blog"
+        );
         setApiBlogData(response.data); // expecting an array of blog objects
       } catch (err) {
         setError("Failed to fetch blog data.");
@@ -38,7 +40,11 @@ const Blogs = () => {
             {/* Blog Image */}
             <div className="md:w-[450px] w-full h-64">
               <img
-                src={`https://samvardhana-properties.onrender.com/uploads/${blog.imgUrl}`}
+                src={
+                  blog.imgUrl
+                    ? `https://samvardhana-properties.onrender.com/uploads/${blog.imgUrl}`
+                    : "/default-blog.jpg"
+                }
                 alt={blog.heading}
                 className="w-full h-full object-cover"
               />
@@ -58,7 +64,11 @@ const Blogs = () => {
               {/* Author Info */}
               <div className="mt-4 flex items-center space-x-3 text-sm text-gray-500">
                 <img
-                  src={`https://samvardhana-properties.onrender.com/uploads/${blog.profilepic}`}
+                  src={
+                    blog.profilepic
+                      ? `https://samvardhana-properties.onrender.com/uploads/${blog.profilepic}`
+                      : "/default-avatar.jpg"
+                  }
                   alt={blog.name}
                   className="w-8 h-8 rounded-full"
                 />
