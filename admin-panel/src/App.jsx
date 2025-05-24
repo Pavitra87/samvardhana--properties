@@ -14,6 +14,7 @@ import EditFaq from "./Dashboard/faqs/EditFaq";
 import CreateProject from "./Dashboard/project/CreateProject";
 import ProjectDashboard from "./Dashboard/project/ProjectDashboard";
 import EditProject from "./Dashboard/project/EditProject";
+import EditAbout from "./Dashboard/about/EditAbout";
 
 const App = () => {
   return (
@@ -33,6 +34,11 @@ const App = () => {
           <Route path="createproject" element={<CreateProject />} />
           <Route path="projectdashboard" element={<ProjectDashboard />} />
           <Route path="editproject/:id" element={<EditProject />} />
+
+          {/* ---------------------about---------- */}
+            <Route path="createabout" element={<CreateAboutPage />} />
+          <Route path="aboutdashboard" element={<AboutDashboard />} />
+          <Route path="editabout/:id" element={<EditAbout/>} />
           <Route path="*" element={<Navigate to="blogdashboard" replace />} />
         </Route>
       </Routes>
