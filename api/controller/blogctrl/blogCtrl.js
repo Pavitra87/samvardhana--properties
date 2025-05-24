@@ -61,7 +61,7 @@ exports.getById = async (req, res) => {
 // Update
 exports.update = async (req, res) => {
    const { id } = req.params;
-    const { heading, description,name } = req.body;
+    const { heading, description,name,message } = req.body;
   
     let imgUrl = req.body.imgUrl;
     if (req.file) {
@@ -69,7 +69,7 @@ exports.update = async (req, res) => {
     }
   
     try {
-      const updateData = { heading, description,name };
+      const updateData = { heading, description,name,message };
       if (imgUrl) updateData.imgUrl = imgUrl;
   
       const updatedBlog = await Blog.findByIdAndUpdate(id, updateData, {

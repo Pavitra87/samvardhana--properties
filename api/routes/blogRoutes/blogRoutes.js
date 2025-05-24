@@ -10,7 +10,7 @@ router.post('/', upload.fields([
   ]), blogctrl.create);
 router.get('/', blogctrl.getAll);
 router.get('/:id', blogctrl.getById);
-router.put('/:id', blogctrl.update);
+router.put('/:id',  upload.single("imgUrl"),blogctrl.update);
 router.delete('/:id', blogctrl.delete);
 
 module.exports = router;
