@@ -3,16 +3,12 @@ const About = require("../../models/about/aboutModel");
 exports.create = async (req, res) => {
   try {
     const { title, heading, description } = req.body;
-
-    const imgUrls = req.files && req.files['imgUrl']
-      ? req.files['imgUrl'].map(file => file.filename)
-      : [];
-
+const imgUrl = req.file?.filename || null;
     const about = new About({
       title,
       heading,
       description,
-      imgUrl: imgUrls
+      imgUrl
     });
 
     const savedAbout = await about.save();
@@ -57,17 +53,33 @@ exports.getById = async (req, res) => {
 
 // Update 
 exports.update = async (req, res) => {
+ const { id } = req.params;
+  const { heading, description,title } = req.body;
+
+  let imgUrl = req.body.imgUrl;
+  if (req.file) {
+    imgUrl = req.file.filename; // or path if you need full URL
+  }
+
   try {
-    const updatedabout = await About.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-    if (!updatedabout)
-      return res.status(404).json({ message: "not found" });
-    res.status(200).json(updatedabout);
+    const updateData = { heading, description,title };
+    if (imgUrl) updateData.imgUrl = imgUrl;
+
+    const updatedAbout = await About.findByIdAndUpdate(id, updateData, {
+      new: true,
+    });
+
+    if (!updatedAbout) {
+      return res.status(404).json({ message: " not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: " updated successfully",
+      data: updatedAbout,
+    });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
