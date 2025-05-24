@@ -56,33 +56,37 @@ exports.getProjectById = async (req, res) => {
 
 // Update a project
 exports.updateProject = async (req, res) => {
-  if (!req.body) {
-      return res.status(400).json({ error: "Missing request body" });
+  const { id } = req.params;
+  const { heading, description } = req.body;
+
+  let imgUrl = req.body.imgUrl;
+  if (req.file) {
+    imgUrl = req.file.filename; // or path if you need full URL
+  }
+
+  try {
+    const updateData = { heading, description };
+    if (imgUrl) updateData.imgUrl = imgUrl;
+
+    const updatedProject = await Project.findByIdAndUpdate(id, updateData, {
+      new: true,
+    });
+
+    if (!updatedProject) {
+      return res.status(404).json({ message: "Project not found" });
     }
-  
-    const { id } = req.params;
-    const {  heading, description,  imgUrl } = req.body;
-  
-    try {
-      const updatedProject = await Project.findByIdAndUpdate(
-        id,
-        {  heading, description,  imgUrl },
-        { new: true }
-      );
-  
-      if (!updatedProject) {
-        return res.status(404).json({ message: "not found" });
-      }
-  
+
     res.status(200).json({
-      success:true,
-    message: " updated successfully",
-    data: updatedProject,
-  });
-    } catch (error) {
-      res.status(400).json({ error: error.message });
-    }
+      success: true,
+      message: "Project updated successfully",
+      data: updatedProject,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
+
+
 
 // Delete a project
 exports.deleteProject = async (req, res) => {
