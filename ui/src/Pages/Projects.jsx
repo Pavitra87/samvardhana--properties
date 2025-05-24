@@ -15,7 +15,7 @@ import {
 // Custom Arrows
 const NextArrow = ({ onClick }) => (
   <div
-    className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 text-white cursor-pointer"
+    className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 text-black cursor-pointer"
     onClick={onClick}
   >
     <IoIosArrowDroprightCircle size={32} />
@@ -24,7 +24,7 @@ const NextArrow = ({ onClick }) => (
 
 const PrevArrow = ({ onClick }) => (
   <div
-    className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 text-white cursor-pointer"
+    className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 text-black cursor-pointer"
     onClick={onClick}
   >
     <IoIosArrowDropleftCircle size={32} />
