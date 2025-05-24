@@ -1,35 +1,32 @@
 const Project = require('../../models/project/projectModel'); 
 
 exports.createProject = async (req, res) => {
-  try {
-    const {
-      title,
-      description,
-     details
-    } = req.body;
+ try {
+    const {  heading, description} = req.body;
 
-  const imgUrl = req.file ? req.file.filename : null;
+   const imgUrl = req.file?.filename || null;
+
 
     const project = new Project({
-      title,
-      description,
       imgUrl,
-       details,
+      
+      heading,
+      description,
+      
     });
 
-    const savedProject = await project.save();
+    const savedproject = await project.save();
 
     res.status(201).json({
       success: true,
-      message: "Project created successfully",
-      data: savedProject,
+      message: "created successfully",
+      data: savedproject,
     });
-
   } catch (error) {
-    console.error("Error creating project:", error);
+    console.error("Error creating :", error);
     res.status(500).json({
       success: false,
-      message: "Server error while creating project",
+      message: "Server error while creating",
       error: error.message,
     });
   }
@@ -59,17 +56,32 @@ exports.getProjectById = async (req, res) => {
 
 // Update a project
 exports.updateProject = async (req, res) => {
-  try {
-    const updatedProject = await Project.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-    if (!updatedProject) return res.status(404).json({ message: 'Project not found' });
-    res.status(200).json(updatedProject);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  if (!req.body) {
+      return res.status(400).json({ error: "Missing request body" });
+    }
+  
+    const { id } = req.params;
+    const {  heading, description,  imgUrl } = req.body;
+  
+    try {
+      const updatedProject = await Project.findByIdAndUpdate(
+        id,
+        {  heading, description,  imgUrl },
+        { new: true }
+      );
+  
+      if (!updatedProject) {
+        return res.status(404).json({ message: "not found" });
+      }
+  
+    res.status(200).json({
+      success:true,
+    message: " updated successfully",
+    data: updatedBlog,
+  });
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
 };
 
 // Delete a project

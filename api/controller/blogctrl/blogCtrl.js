@@ -88,11 +88,6 @@ exports.update = async (req, res) => {
   }
 };
 
-
-
-
-
-
 // Delete
 exports.delete = async (req, res) => {
   try {

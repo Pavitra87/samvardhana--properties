@@ -19,13 +19,15 @@ app.use(express.urlencoded({ extended: true }));
 
 //uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-// api.use('/api/home',require('./routes/homeRoutes'))
+
 
 //blogroutes
 app.use("/api/blog", require("./routes/blogRoutes/blogRoutes"));
 
 //feqroutes
 app.use("/api/faqs", require("./routes/faqRoutes/faqRoutes"));
+//project
+app.use("/api/project", require("./routes/projectRoutes/projectRoutes"));
 
 
 
