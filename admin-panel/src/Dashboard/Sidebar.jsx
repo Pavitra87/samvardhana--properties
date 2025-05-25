@@ -23,7 +23,7 @@ const Sidebar = () => {
             Projects
           </Link>
         </li>
-        
+
         <li>
           <Link
             to="/blogdashboard"
@@ -43,7 +43,10 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link className="flex items-center py-2  px-4  hover:bg-gray-700 transition">
+          <Link
+            to="contactdashboard"
+            className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
+          >
             <MdPermContactCalendar className="text-xl mr-3" />
             Contact Us
           </Link>
@@ -51,7 +54,7 @@ const Sidebar = () => {
 
         <li>
           <Link
-          to='/aboutdashboard' 
+            to="/aboutdashboard"
             className="flex items-center py-2  px-4  hover:bg-gray-700 transition"
           >
             <MdOutlineFormatListBulleted className="text-xl mr-3" />
