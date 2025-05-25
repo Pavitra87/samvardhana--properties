@@ -6,6 +6,9 @@ import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import Question from "../Components/Question";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // <-- import useNavigate
+import { FaTimes } from "react-icons/fa";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -15,35 +18,55 @@ const Contact = () => {
     city: "",
     message: "",
   });
-  const [error, setError] = useState("");
+  
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    console.log("Form Submitted:", form);
-    alert("Message sent successfully!");
-    setForm({ name: "", email: "", phone: "", city: "", message: "" });
+
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("city", formData.city);
+
+    data.append("message", formData.message);
+    try {
+      const response = await axios.post(
+        "https://samvardhana-properties.onrender.com/api/contact/",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+
+      alert(" created successfully!");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error creating :", error);
+      alert("Failed to create ");
+    }
   };
 
-  const { imgUrl, altText} = contactData.contact;
+  const { imgUrl, altText } = contactData.contact;
 
   return (
     <>
       <Banner imgUrl={imgUrl} altText={altText} textColor="black" />
+
       <div className="max-w-7xl md:max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Contact Form */}
+          <h2 className="text-3xl font-bold text-gray-800">Get In Touch</h2>
           <form
             onSubmit={handleSubmit}
             className="space-y-6 border rounded-lg p-5 bg-white shadow-sm"
           >
-            <h2 className="text-3xl font-bold text-gray-800">Get In Touch</h2>
-
             <div className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm text-gray-700">
@@ -53,8 +76,8 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Enter Full Name"
-                  value={form.name}
+                 required
+                 placeholder="Enter Name"
                   onChange={handleChange}
                   className="w-full bg-green-50 rounded-lg px-4 py-2 mt-1 text-sm"
                 />
@@ -69,7 +92,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   placeholder="Enter Email"
-                  value={form.email}
+                 
                   onChange={handleChange}
                   className="w-full bg-green-50 rounded px-4 py-2 mt-1 text-sm"
                 />
@@ -87,7 +110,7 @@ const Contact = () => {
                   id="phone"
                   name="phone"
                   placeholder="+91"
-                  value={form.phone}
+                 
                   onChange={handleChange}
                   className="w-full bg-green-50 rounded px-4 py-2 mt-1 text-sm"
                 />
@@ -102,7 +125,7 @@ const Contact = () => {
                   id="city"
                   name="city"
                   placeholder="Enter City"
-                  value={form.city}
+                
                   onChange={handleChange}
                   className="w-full bg-green-50 rounded px-4 py-2 mt-1 text-sm"
                 />
@@ -119,7 +142,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   placeholder="Description"
-                  value={form.message}
+                
                   onChange={handleChange}
                   className="w-full bg-green-50 h-10 rounded px-4 py-2 h-[85px] text-sm mt-1 resize-none"
                 />
@@ -171,12 +194,11 @@ const Contact = () => {
               <h4 className="font-bold text-base mb-2">Office Address</h4>
               <p className="text-sm flex flex-row gap-2">
                 <span className="text-orange-600 text-xl  rounded-xl  p-1 ">
-                  <FaLocationDot className="sm:bg-orange-none"/>
+                  <FaLocationDot className="sm:bg-orange-none" />
                 </span>
                 <span className="flex flex-wrap w-1/2">
                   No:4540, Ayyappa Swami Temple, 3333/781/3322, Opposite Main
-                  Road,
-                 M V Extension, Hoskote, Bengaluru, Karnataka 581324
+                  Road, M V Extension, Hoskote, Bengaluru, Karnataka 581324
                 </span>
               </p>
             </div>
