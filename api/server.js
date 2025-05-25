@@ -30,6 +30,9 @@ app.use("/api/faqs", require("./routes/faqRoutes/faqRoutes"));
 //project
 app.use("/api/project", require("./routes/projectRoutes/projectRoutes"));
 
+//contact
+app.use("/api/contact",require("./routes/contactRoutes/contactRoutes"))
+
 
 
 app.listen(port, () => {
